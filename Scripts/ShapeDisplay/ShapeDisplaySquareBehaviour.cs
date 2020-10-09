@@ -10,6 +10,7 @@ public class ShapeDisplaySquareBehaviour : Jundroo.SimplePlanes.ModTools.Parts.P
     // Part modifier script
     private ShapeDisplaySquare modifier;
 
+    private Canvas canvas;
     private Image square;
 
     private bool InDesigner;
@@ -22,6 +23,7 @@ public class ShapeDisplaySquareBehaviour : Jundroo.SimplePlanes.ModTools.Parts.P
 
         modifier = (ShapeDisplaySquare)PartModifier;
 
+        canvas = GetComponentInChildren<Canvas>();
         square = GetComponentInChildren<Image>();
 
         ApplyValues();
@@ -42,5 +44,7 @@ public class ShapeDisplaySquareBehaviour : Jundroo.SimplePlanes.ModTools.Parts.P
     private void ApplyValues()
     {
         square.color = new Color(modifier.ColorR / 255f, modifier.ColorG / 255f, modifier.ColorB / 255f, modifier.ColorA / 255f);
+
+        canvas.sortingOrder = modifier.SortOrder;
     }
 }

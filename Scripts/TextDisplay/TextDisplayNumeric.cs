@@ -51,6 +51,10 @@ public class TextDisplayNumeric : Jundroo.SimplePlanes.ModTools.Parts.PartModifi
     private float _linespacing = 1f;
 
     [SerializeField]
+    [DesignerPropertySlider(Label = "Sorting Order", MaxValue = 9, MinValue = 0, NumberOfSteps = 10, Order = 150)]
+    private int _sortorder = 0;
+
+    [SerializeField]
     [DesignerPropertyToggleButton(Header = "Paragraphing", Label = "Text Anchor", Order = 200)]
     private TextAnchor _textanchor = TextAnchor.UpperLeft;
 
@@ -143,6 +147,14 @@ public class TextDisplayNumeric : Jundroo.SimplePlanes.ModTools.Parts.PartModifi
         get
         {
             return _linespacing;
+        }
+    }
+
+    public int SortOrder
+    {
+        get
+        {
+            return _sortorder;
         }
     }
 

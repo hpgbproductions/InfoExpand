@@ -19,6 +19,10 @@ public class ShapeDisplayRing : Jundroo.SimplePlanes.ModTools.Parts.PartModifier
     private float _inradius = 0.8f;
 
     [SerializeField]
+    [DesignerPropertySlider(Label = "Sorting Order", MaxValue = 9, MinValue = 0, NumberOfSteps = 10, Order = 20)]
+    private int _sortorder = 0;
+
+    [SerializeField]
     [DesignerPropertySlider(Label = "Red", MaxValue = 255, MinValue = 0, NumberOfSteps = 256, Order = 100)]
     private int _color_r = 255;
 
@@ -39,6 +43,14 @@ public class ShapeDisplayRing : Jundroo.SimplePlanes.ModTools.Parts.PartModifier
         get
         {
             return _inradius;
+        }
+    }
+
+    public int SortOrder
+    {
+        get
+        {
+            return _sortorder;
         }
     }
 

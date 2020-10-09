@@ -10,7 +10,8 @@ public class ShapeDisplayRingBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
     // Part modifier script
     private ShapeDisplayRing modifier;
 
-    private GameObject canvas;
+    private Canvas canvas;
+    private GameObject canvas_o;
     private RectTransform mask_rect;
 
     private GameObject bg;
@@ -26,10 +27,11 @@ public class ShapeDisplayRingBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
 
         modifier = (ShapeDisplayRing)PartModifier;
 
-        canvas = GetComponentInChildren<Canvas>().gameObject;
-        mask_rect = canvas.GetComponent<RectTransform>();
+        canvas = GetComponentInChildren<Canvas>();
+        canvas_o = canvas.gameObject;
+        mask_rect = canvas_o.GetComponent<RectTransform>();
 
-        bg = canvas.transform.Find("Back").gameObject;
+        bg = canvas_o.transform.Find("Back").gameObject;
         bg_circle = bg.GetComponent<Image>();
 
         ApplyValues();
@@ -50,6 +52,8 @@ public class ShapeDisplayRingBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
 
     private void ApplyValues()
     {
+        canvas.sortingOrder = modifier.SortOrder;
+
         mask_rect.sizeDelta = new Vector2(modifier.InRadius * 256, modifier.InRadius * 256);
 
         bg_circle.color = new Color(modifier.ColorR / 255f, modifier.ColorG / 255f, modifier.ColorB / 255f, modifier.ColorA / 255f);

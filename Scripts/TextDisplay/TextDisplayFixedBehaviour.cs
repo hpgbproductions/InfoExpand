@@ -10,6 +10,7 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
     // Part modifier script
     private TextDisplayFixed modifier;
 
+    private Canvas Canvas;
     private RectTransform CanvasRect;
     private Text CanvasText;
 
@@ -27,6 +28,7 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
 
         modifier = (TextDisplayFixed)PartModifier;
 
+        Canvas = GetComponentInChildren<Canvas>();
         CanvasRect = GetComponentInChildren<RectTransform>();
         CanvasText = GetComponentInChildren<Text>();
 
@@ -53,6 +55,8 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
     {
         CanvasRect.sizeDelta = new Vector2Int(modifier.SizeX, modifier.SizeY);
         ColliderObject.transform.localScale = new Vector3(modifier.SizeX * 0.01f, modifier.SizeY * 0.01f, 0.1f);
+
+        Canvas.sortingOrder = modifier.SortOrder;
 
         ApplyFormatText();
 

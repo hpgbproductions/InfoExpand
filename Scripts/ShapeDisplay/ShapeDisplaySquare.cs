@@ -15,6 +15,10 @@ using UnityEngine;
 public class ShapeDisplaySquare : Jundroo.SimplePlanes.ModTools.Parts.PartModifier
 {
     [SerializeField]
+    [DesignerPropertySlider(Label = "Sorting Order", MaxValue = 9, MinValue = 0, NumberOfSteps = 10, Order = 20)]
+    private int _sortorder = 0;
+
+    [SerializeField]
     [DesignerPropertySlider(Label = "Red", MaxValue = 255, MinValue = 0, NumberOfSteps = 256, Order = 100)]
     private int _color_r = 255;
 
@@ -29,6 +33,14 @@ public class ShapeDisplaySquare : Jundroo.SimplePlanes.ModTools.Parts.PartModifi
     [SerializeField]
     [DesignerPropertySlider(Label = "Alpha", MaxValue = 255, MinValue = 0, NumberOfSteps = 256, Order = 130)]
     private int _color_a = 255;
+
+    public int SortOrder
+    {
+        get
+        {
+            return _sortorder;
+        }
+    }
 
     public int ColorR
     {
