@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="ShapeDisplayRing">
+  <PartType id="Mod_InformativeComponents_ShapeDisplayRing" name="ShapeDisplayRing" modPrefabPath="Assets/_ModAssets_/Parts/ShapeDisplayRing.prefab" mass="1" health="100" damageDisconnect="false" sharesRigidBody="false" combineMeshes="false" disconnectForce="10" underwaterDragScalar="1" defaultMaterials="-1,-1,-1,-1">
+    <Modifiers>
+      <InputController defaultActivationGroup="0" defaultInput="1" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="Angle" propertyEditorDesc="Radial Fill Angle" zeroOnDeactivate="true" />
+      <ModModifier id="InformativeComponents_ShapeDisplayRing" type="ShapeDisplayRing, InformativeComponents-Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <DefaultState _inradius="0.8" _color_r="255" _color_g="255" _color_b="255" _color_a="255" />
+      </ModModifier>
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint adaptiveIgnore="false" a="1111" allowRotation="false" display="false" displayWhenDragged="true" fuselageConnection="false" ignoreGrid="false" ignoreSurface="false" jointType="Fixed" wingAttach="false" normal="0,0,1" position="0,0,0.125" />
+    </AttachPoints>
+  </PartType>
+  <DesignerPart name="Ring Display" category="Info Components" description="Procedurally generates a ring with a user-defined inner radius. Radial fill can be changed with an Input Controller.">
+    <Assembly>
+      <Parts>
+        <Part id="1" partType="Mod_InformativeComponents_ShapeDisplayRing" position="0,0,0" rotation="0,0,0">
+          <InputController.State defaultActivationGroup="0" defaultInput="1" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="Angle" propertyEditorDesc="Radial Fill Angle" zeroOnDeactivate="true" />
+        </Part>
+      </Parts>
+    </Assembly>
+  </DesignerPart>
+</Part>

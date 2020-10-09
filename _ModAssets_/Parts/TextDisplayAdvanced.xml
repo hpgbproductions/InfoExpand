@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="TextDisplayAdvanced">
+  <PartType id="Mod_InformativeComponents_TextDisplayAdvanced" name="TextDisplayAdvanced" modPrefabPath="Assets/_ModAssets_/Parts/TextDisplayAdvanced.prefab" mass="1" health="100" damageDisconnect="false" sharesRigidBody="false" combineMeshes="false" disconnectForce="10" underwaterDragScalar="1" defaultMaterials="-1,-1,-1,-1">
+    <Modifiers>
+      <InputController defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data0" propertyEditorDesc="Numeric Input 0" zeroOnDeactivate="true" />
+      <InputController defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data1" propertyEditorDesc="Numeric Input 1" zeroOnDeactivate="true" />
+      <InputController defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data2" propertyEditorDesc="Numeric Input 2" zeroOnDeactivate="true" />
+      <InputController defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data3" propertyEditorDesc="Numeric Input 3" zeroOnDeactivate="true" />
+      <ModModifier id="InformativeComponents_TextDisplayAdvanced" type="TextDisplayAdvanced, InformativeComponents-Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <DefaultState _sizeX="200" _sizeY="50" _text="New Text" _fontface="ICLIBER" _fontstyle="Normal" _fontsize="20" _linespacing="1" _textanchor="UpperLeft" _bestfit="false" _color_r="255" _color_g="255" _color_b="255" _color_a="255" />
+      </ModModifier>
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint adaptiveIgnore="false" a="1111" allowRotation="false" display="false" displayWhenDragged="true" fuselageConnection="false" ignoreGrid="false" ignoreSurface="false" jointType="Fixed" wingAttach="false" normal="0,0,1" position="0,0,0.125" />
+    </AttachPoints>
+  </PartType>
+  <DesignerPart name="Advanced Text Display" category="Gizmos" description="Shows a line of text, freely formattable with up to four input values.">
+    <Assembly>
+      <Parts>
+        <Part id="1" partType="Mod_InformativeComponents_TextDisplayAdvanced" position="0,0,0" rotation="0,0,0">
+          <InputController.State defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data0" propertyEditorDesc="Numeric Input 0" zeroOnDeactivate="true" />
+          <InputController.State defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data1" propertyEditorDesc="Numeric Input 1" zeroOnDeactivate="true" />
+          <InputController.State defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data2" propertyEditorDesc="Numeric Input 2" zeroOnDeactivate="true" />
+          <InputController.State defaultActivationGroup="0" defaultInput="VTOL" defaultMax="1" defaultMin="-1" invertOnMirror="false" invertType="output" name="data3" propertyEditorDesc="Numeric Input 3" zeroOnDeactivate="true" />
+        </Part>
+      </Parts>
+    </Assembly>
+  </DesignerPart>
+</Part>

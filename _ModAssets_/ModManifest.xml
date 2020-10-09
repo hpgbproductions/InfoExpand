@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ModManifest buildID="c8addf3f-cd47-499e-a79b-6a8e8bff1b4a">
+  <Mod name="Informative Components" author="hpgbproductions" versionMajor="1" versionMinor="0" loadPriority="1000" lastUpdated="2020-10-09T10:11:58.5580805Z" apiVersion="1.0.0.0" description="Text display objects and other similar tools.">
+    <Steam title="" visibility="Public" previewPath="" language="English" tags="">
+      <description></description>
+    </Steam>
+    <GameObjects>
+      <GameObject name="CommandsPersistent" path="Assets/_ModAssets_/CommandsPersistent.prefab" />
+      <GameObject name="ShapeDisplayRing" path="Assets/_ModAssets_/Parts/ShapeDisplayRing.prefab" />
+      <GameObject name="ShapeDisplaySquare" path="Assets/_ModAssets_/Parts/ShapeDisplaySquare.prefab" />
+      <GameObject name="TextDisplayFixed" path="Assets/_ModAssets_/Parts/TextDisplayFixed.prefab" />
+      <GameObject name="TextDisplayNumeric" path="Assets/_ModAssets_/Parts/TextDisplayNumeric.prefab" />
+    </GameObjects>
+    <Assets>
+      <Asset path="Assets/Fonts/DSEG14Classic-Bold.ttf" />
+      <Asset path="Assets/Fonts/DSEG14Classic-BoldItalic.ttf" />
+      <Asset path="Assets/Fonts/DSEG14Classic-Italic.ttf" />
+      <Asset path="Assets/Fonts/DSEG14Classic-Regular.ttf" />
+      <Asset path="Assets/Fonts/IPAMonaGothic.ttf" />
+      <Asset path="Assets/Fonts/IPAMonaPGothic.ttf" />
+      <Asset path="Assets/Fonts/LiberationSans.ttf" />
+      <Asset path="Assets/Fonts/LiberationSans-Bold.ttf" />
+      <Asset path="Assets/Fonts/LiberationSans-BoldItalic.ttf" />
+      <Asset path="Assets/Fonts/LiberationSans-Italic.ttf" />
+      <Asset path="Assets/Fonts/Play-Bold.ttf" />
+      <Asset path="Assets/Fonts/Play-Regular.ttf" />
+      <Asset path="Assets/Fonts/VCR_OSD_MONO_1.001.ttf" />
+      <Asset path="Assets/Supply/circle.png" />
+      <Asset path="Assets/Supply/CircleMask.mat" />
+      <Asset path="Assets/Supply/CircleMasked.mat" />
+      <Asset path="Assets/Supply/full.png" />
+      <Asset path="Assets/Supply/mesh_debug.mat" />
+      <Asset path="Assets/Supply/mesh_debug.png" />
+    </Assets>
+    <MaterialShaderMap>
+      <Material name="CircleMask" shader="UI/Default" />
+      <Material name="CircleMasked" shader="UI/Default" />
+      <Material name="mesh_debug" shader="Standard" />
+    </MaterialShaderMap>
+    <Assemblies>
+      <Assembly name="InformativeComponents-Assembly-CSharp.dll" path="Assets/_ModAssets_/InformativeComponents-Assembly-CSharp.dll.bytes" isProjectAssembly="true" />
+    </Assemblies>
+    <Sections>
+      <SimplePlanesMod apiVersion="1.0.0.0">
+        <Maps />
+        <Levels />
+        <Parts>
+          <Part name="ShapeDisplayRing" prefabPath="Assets/_ModAssets_/Parts/ShapeDisplayRing.prefab" xmlPath="Assets/_ModAssets_/Parts/ShapeDisplayRing.xml" />
+          <Part name="ShapeDisplaySquare" prefabPath="Assets/_ModAssets_/Parts/ShapeDisplaySquare.prefab" xmlPath="Assets/_ModAssets_/Parts/ShapeDisplaySquare.xml" />
+          <Part name="TextDisplayFixed" prefabPath="Assets/_ModAssets_/Parts/TextDisplayFixed.prefab" xmlPath="Assets/_ModAssets_/Parts/TextDisplayFixed.xml" />
+          <Part name="TextDisplayNumeric" prefabPath="Assets/_ModAssets_/Parts/TextDisplayNumeric.prefab" xmlPath="Assets/_ModAssets_/Parts/TextDisplayNumeric.xml" />
+        </Parts>
+        <DesignerPlugins />
+        <MapPlugins />
+        <PersistentObjects>
+          <PersistentObject objectName="CommandsPersistent" />
+        </PersistentObjects>
+      </SimplePlanesMod>
+    </Sections>
+  </Mod>
+</ModManifest>

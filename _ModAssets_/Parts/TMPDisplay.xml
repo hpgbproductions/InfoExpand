@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="TMPDisplay">
+  <PartType id="Mod_InformativeComponents_TMPDisplay" name="TMPDisplay" modPrefabPath="Assets/_ModAssets_/Parts/TMPDisplay.prefab" mass="1" health="100" damageDisconnect="false" sharesRigidBody="false" combineMeshes="false" disconnectForce="10" underwaterDragScalar="1" defaultMaterials="-1,-1,-1,-1">
+    <Modifiers>
+      <ModModifier id="InformativeComponents_TMPDisplay" type="TMPDisplay, InformativeComponents-Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <DefaultState _sizeX="2" _sizeY="0.5" _text="New Text" _fontface="ICLIBER" _fontstyle="Normal" _fontsize="20" _autosize="false" _color_r="255" _color_g="255" _color_b="255" _color_a="255" />
+      </ModModifier>
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint adaptiveIgnore="false" a="1111" allowRotation="false" display="false" displayWhenDragged="true" fuselageConnection="false" ignoreGrid="false" ignoreSurface="false" jointType="Fixed" wingAttach="false" normal="0,0,1" position="0,0,0.125" />
+    </AttachPoints>
+  </PartType>
+  <DesignerPart name="TMP Display" category="Info Components" description="Using TextMesh Pro, displays text that is affected by surrounding lighting conditions. Optional Input Controller value.">
+    <Assembly>
+      <Parts>
+        <Part id="1" partType="Mod_InformativeComponents_TMPDisplay" position="0,0,0" rotation="0,0,0" />
+      </Parts>
+    </Assembly>
+  </DesignerPart>
+</Part>

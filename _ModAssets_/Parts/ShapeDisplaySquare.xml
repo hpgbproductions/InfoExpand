@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Part name="ShapeDisplaySquare">
+  <PartType id="Mod_InformativeComponents_ShapeDisplaySquare" name="ShapeDisplaySquare" modPrefabPath="Assets/_ModAssets_/Parts/ShapeDisplaySquare.prefab" mass="1" health="100" damageDisconnect="false" sharesRigidBody="false" combineMeshes="false" disconnectForce="10" underwaterDragScalar="1" defaultMaterials="-1,-1,-1,-1">
+    <Modifiers>
+      <InputController defaultActivationGroup="0" defaultInput="1" defaultMax="1" defaultMin="0" invertOnMirror="false" invertType="output" name="fill" propertyEditorDesc="Fill Amount" zeroOnDeactivate="true" />
+      <ModModifier id="InformativeComponents_ShapeDisplaySquare" type="ShapeDisplaySquare, InformativeComponents-Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null">
+        <DefaultState _color_r="255" _color_g="255" _color_b="255" _color_a="255" />
+      </ModModifier>
+    </Modifiers>
+    <AttachPoints>
+      <AttachPoint adaptiveIgnore="false" a="1111" allowRotation="false" display="false" displayWhenDragged="true" fuselageConnection="false" ignoreGrid="false" ignoreSurface="false" jointType="Fixed" wingAttach="false" normal="0,0,1" position="0,0,0.125" />
+    </AttachPoints>
+  </PartType>
+  <DesignerPart name="Square Display" category="Info Components" description="Generates a square that fills vertically from bottom to top, using an Input Controller.">
+    <Assembly>
+      <Parts>
+        <Part id="1" partType="Mod_InformativeComponents_ShapeDisplaySquare" position="0,0,0" rotation="0,0,0">
+          <InputController.State defaultActivationGroup="0" defaultInput="1" defaultMax="1" defaultMin="0" invertOnMirror="false" invertType="output" name="fill" propertyEditorDesc="Fill Amount" zeroOnDeactivate="true" />
+        </Part>
+      </Parts>
+    </Assembly>
+  </DesignerPart>
+</Part>
