@@ -55,8 +55,12 @@ public class TextDisplayFixed : Jundroo.SimplePlanes.ModTools.Parts.PartModifier
     private bool _bestfit = false;
 
     [SerializeField]
-    [DesignerPropertyToggleButton("Float", "Integer", Header = "Input Value Options", Label = "Input Type", Order = 250)]
+    [DesignerPropertyToggleButton("Float", "Integer", Header = "Input Value Options", Label = "Input #0 Type", Order = 250)]
     private string _inputtype = "Float";
+
+    [SerializeField]
+    [DesignerPropertySlider(Label = "Channel", MaxValue = 15, MinValue = 0, NumberOfSteps = 16, Order = 260)]
+    private int _channel = 0;
 
     [SerializeField]
     [DesignerPropertySlider(Header = "Text Color", Label = "Red", MaxValue = 255, MinValue = 0, NumberOfSteps = 256, Order = 300)]
@@ -159,6 +163,14 @@ public class TextDisplayFixed : Jundroo.SimplePlanes.ModTools.Parts.PartModifier
         get
         {
             return _inputtype;
+        }
+    }
+
+    public int Channel
+    {
+        get
+        {
+            return _channel;
         }
     }
 

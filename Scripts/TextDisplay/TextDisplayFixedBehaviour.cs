@@ -18,6 +18,8 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
 
     private GameObject ColliderObject;
 
+    private List<TextAdditionalInputBehaviour> AdditionalInputs;
+
     private bool InDesigner;
     private bool InLevel;
 
@@ -58,8 +60,6 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
 
         Canvas.sortingOrder = modifier.SortOrder;
 
-        ApplyFormatText();
-
         CanvasText.font = FontList.SelectFont(modifier.FontFace);
         CanvasText.fontStyle = modifier.FontStyle;
         CanvasText.fontSize = modifier.FontSize;
@@ -69,31 +69,62 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
         CanvasText.resizeTextForBestFit = modifier.BestFit;
 
         CanvasText.color = new Color(modifier.ColorR / 255f, modifier.ColorG / 255f, modifier.ColorB / 255f, modifier.ColorA / 255f);
+
+        if (!InDesigner && InLevel)
+        {
+            AdditionalInputs = new List<TextAdditionalInputBehaviour>(FindObjectsOfType<TextAdditionalInputBehaviour>());
+            Debug.Log("AdditionalInputs length: " + AdditionalInputs.Count);
+
+            for (int i = 0; i < AdditionalInputs.Count; i++)
+            {
+                if (AdditionalInputs[i].Channel != modifier.Channel)
+                {
+                    AdditionalInputs.RemoveAt(i);
+                }
+            }
+
+            Debug.Log("AdditionalInputs length: " + AdditionalInputs.Count);
+
+            AdditionalInputs.Sort();
+        }
+
+        ApplyFormatText();
     }
 
     private void ApplyFormatText()
     {
         if (InDesigner)
         {
-            if (modifier.InputType == "Float")
-            {
-                CanvasText.text = String.Format(modifier.Text, 0f);
-            }
-            else if (modifier.InputType == "Integer")
-            {
-                CanvasText.text = String.Format(modifier.Text, 0);
-            }
+            CanvasText.text = modifier.Text;
         }
         else if (InLevel)
         {
-            if (modifier.InputType == "Float")
+            List<object> InputValues = new List<object>();
+
+            // Built-in input
+            InputValues.Add(ConvertValueType(modifier.InputType, InputController.Value));
+            // Additional inputs
+            foreach (TextAdditionalInputBehaviour taib in AdditionalInputs)
             {
-                CanvasText.text = String.Format(modifier.Text, InputController.Value);
+                InputValues.Add(ConvertValueType(taib.InputType, taib.Value));
             }
-            else if (modifier.InputType == "Integer")
-            {
-                CanvasText.text = String.Format(modifier.Text, Mathf.RoundToInt(InputController.Value));
-            }
+
+            Debug.Log("InputValues length: " + InputValues.Count);
+
+            object[] args = InputValues.ToArray();
+            CanvasText.text = string.Format(modifier.Text, args);
+        }
+    }
+
+    private object ConvertValueType(string s, float v)
+    {
+        if (s == "Integer")
+        {
+            return Mathf.RoundToInt(v);
+        }
+        else
+        {
+            return v;
         }
     }
 }
