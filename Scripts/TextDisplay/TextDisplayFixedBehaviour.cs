@@ -73,8 +73,6 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
         if (!InDesigner && InLevel)
         {
             AdditionalInputs = new List<TextAdditionalInputBehaviour>(FindObjectsOfType<TextAdditionalInputBehaviour>());
-            Debug.Log("AdditionalInputs length: " + AdditionalInputs.Count);
-
             for (int i = 0; i < AdditionalInputs.Count; i++)
             {
                 if (AdditionalInputs[i].Channel != modifier.Channel)
@@ -82,8 +80,6 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
                     AdditionalInputs.RemoveAt(i);
                 }
             }
-
-            Debug.Log("AdditionalInputs length: " + AdditionalInputs.Count);
 
             AdditionalInputs.Sort();
         }
@@ -108,8 +104,6 @@ public class TextDisplayFixedBehaviour : Jundroo.SimplePlanes.ModTools.Parts.Par
             {
                 InputValues.Add(ConvertValueType(taib.InputType, taib.Value));
             }
-
-            Debug.Log("InputValues length: " + InputValues.Count);
 
             object[] args = InputValues.ToArray();
             CanvasText.text = string.Format(modifier.Text, args);
